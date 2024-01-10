@@ -1,7 +1,11 @@
 const express = require('express');
 const app = express();
 
+// TASK 2: Hackers can exploit known vulnerabilities in Express/Node 
+// if they see that your site is powered by Express. 
+// X-Powered-By: Express is sent in every request coming from Express by default.
 
+app.use(helmet.hidePoweredBy());
 
 
 
