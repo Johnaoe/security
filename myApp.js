@@ -7,7 +7,11 @@ const app = express();
 const helmet = require('helmet')
 app.use(helmet.hidePoweredBy());
 
-
+// TASK 3: Your page could be put in a <frame> or <iframe> without your consent. 
+// This can result in clickjacking attacks
+// It restricts who can put your site in a frame 
+// It has three modes: DENY, SAMEORIGIN, and ALLOW-FROM.
+app.use(helmet.frameguard({action: 'deny'}));
 
 
 
