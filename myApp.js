@@ -13,7 +13,13 @@ app.use(helmet.hidePoweredBy());
 // It has three modes: DENY, SAMEORIGIN, and ALLOW-FROM.
 app.use(helmet.frameguard({action: 'deny'}));
 
-
+// TASK 4: Cross-site scripting (XSS) is a frequent type of attack 
+// where malicious scripts are injected into vulnerable pages, 
+// with the purpose of stealing sensitive data like session cookies, or passwords.
+// The X-XSS-Protection HTTP header is a basic protection. 
+// The browser detects a potential injected script using a heuristic filter. 
+// If the header is enabled, the browser changes the script code, neutralizing it
+app.use(helmet.xssFilter());
 
 
 
