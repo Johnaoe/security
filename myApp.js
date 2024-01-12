@@ -21,6 +21,11 @@ app.use(helmet.frameguard({action: 'deny'}));
 // If the header is enabled, the browser changes the script code, neutralizing it
 app.use(helmet.xssFilter());
 
+// TASK 5: Browsers can use content or MIME sniffing to override the Content-Type header 
+// of a response to guess and process the data using an implicit content type. 
+// This middleware sets the X-Content-Type-Options header to nosniff, 
+// instructing the browser to not bypass the provided Content-Type
+app.use(helmet.noSniff());
 
 
 
