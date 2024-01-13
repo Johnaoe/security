@@ -27,6 +27,11 @@ app.use(helmet.xssFilter());
 // instructing the browser to not bypass the provided Content-Type
 app.use(helmet.noSniff());
 
+// TASK 6: Some web applications will serve untrusted HTML for download
+// This middleware sets the X-Download-Options header to noopen. 
+// This will prevent IE users from executing downloads in the trusted site’s context. 
+app.use(helmet.ieNoOpen());
+
 
 
 
