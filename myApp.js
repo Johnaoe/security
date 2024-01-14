@@ -32,6 +32,12 @@ app.use(helmet.noSniff());
 // This will prevent IE users from executing downloads in the trusted site’s context. 
 app.use(helmet.ieNoOpen());
 
+// TASK 7: Strict Transport Security (HSTS) 
+// protect websites against protocol downgrade attacks and cookie hijacking. 
+// you can ask user’s browsers to avoid using insecure HTTP
+const timeInSeconds = 7776000;
+app.use(helmet.hsts({maxAge: timeInSeconds, force: true}))
+
 
 
 
