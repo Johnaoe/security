@@ -48,6 +48,20 @@ app.use(helmet.dnsPrefetchControl());
 // newer version, you can (try to) disable caching on client’s browser.
 app.use(helmet.noCache())
 
+// TASK 10:
+//  By setting and configuring a Content Security Policy you can prevent 
+// the injection of anything unintended into your page. 
+// This will protect your app from XSS vulnerabilities, undesired tracking, 
+// malicious frames, and much more.
+
+app.use(helmet.contentSecurityPolicy({
+  directives: {
+  defaultSrc: ["'self'"],
+  srciptSrc: ["'self'", 'trusted-cdn.com']
+  },
+})
+);
+
 
 
 
