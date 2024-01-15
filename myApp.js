@@ -36,7 +36,11 @@ app.use(helmet.ieNoOpen());
 // protect websites against protocol downgrade attacks and cookie hijacking. 
 // you can ask user’s browsers to avoid using insecure HTTP
 const timeInSeconds = 90*24*60*60;
-app.use(helmet.hsts({maxAge: timeInSeconds, force: true}))
+app.use(helmet.hsts({maxAge: timeInSeconds, force: true}));
+
+// TASK 8: DNS Prefetching
+
+app.use(helmet.dnsPrefetchControl());
 
 
 
