@@ -62,6 +62,21 @@ app.use(helmet.contentSecurityPolicy({
 })
 );
 
+// TASK: 11 ‘parent’ helmet() Middleware
+
+app.use(helmet({
+  frameguard: {         // configure
+    action: 'deny'
+  },
+  contentSecurityPolicy: {    // enable and configure
+    directives: {
+      defaultSrc: ["'self'"],
+      styleSrc: ['style.com'],
+    }
+  },
+  dnsPrefetchControl: false     // disable
+}))
+
 
 
 
