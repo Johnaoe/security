@@ -42,6 +42,11 @@ app.use(helmet.hsts({maxAge: timeInSeconds, force: true}));
 
 app.use(helmet.dnsPrefetchControl());
 
+// TASK 9: 
+// If you are releasing an update for your website, 
+// and you want the users to always download the
+// newer version, you can (try to) disable caching on client’s browser.
+app.use(helmet.noCache())
 
 
 
